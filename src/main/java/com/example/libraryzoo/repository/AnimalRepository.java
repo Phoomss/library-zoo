@@ -1,6 +1,9 @@
 package com.example.libraryzoo.repository;
 
-import org.springframework.data.repository.CrudRepository;
+public interface AnimalRepository extends CrudRepository<Animal, Integer> {
+
+}
+
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.example.libraryzoo.model.Animal;
