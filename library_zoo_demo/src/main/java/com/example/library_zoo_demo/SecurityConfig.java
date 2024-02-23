@@ -73,7 +73,7 @@ public class SecurityConfig {
                 .sessionManagement(
                         (sessionManagement) -> sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests.requestMatchers(HttpMethod.POST,
-                        "/login").permitAll().anyRequest().authenticated())
+                        "/login").permitAll().anyRequest().permitAll())
                 .addFilterBefore(authenticationFilter,
                         UsernamePasswordAuthenticationFilter.class)
                 .exceptionHandling((exceptionHandling) -> exceptionHandling.authenticationEntryPoint(exceptionHandler));
